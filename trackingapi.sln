@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trackingapi", "trackingapi\trackingapi.csproj", "{0BAE709A-F660-4C79-AC3F-133DCEF8BDCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BAE709A-F660-4C79-AC3F-133DCEF8BDCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BAE709A-F660-4C79-AC3F-133DCEF8BDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BAE709A-F660-4C79-AC3F-133DCEF8BDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BAE709A-F660-4C79-AC3F-133DCEF8BDCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {63FE5665-5152-4182-B997-11BD7B3CC3CD}
+	EndGlobalSection
+EndGlobal
