@@ -1,11 +1,10 @@
-﻿using Queries.Core.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
+﻿
+using Core.Interfaces;
+//using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace Queries.Persistence.Repositories
+namespace Infrastructure.Data.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
@@ -23,6 +22,8 @@ namespace Queries.Persistence.Repositories
             return Context.Set<TEntity>().Find(id);
         }
 
+
+
         public IEnumerable<TEntity> GetAll()
         {
             // Note that here I've repeated Context.Set<TEntity>() in every method and this is causing
@@ -39,6 +40,11 @@ namespace Queries.Persistence.Repositories
             return Context.Set<TEntity>().ToList();
         }
 
+        public async Task<TEntity> GetAsync(int id)
+            => await Context.Set<TEntity>().FindAsync(id);
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
+            => await Context.Set<TEntity>().ToListAsync();
+
         public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
         {
             return Context.Set<TEntity>().Where(predicate);
@@ -53,6 +59,10 @@ namespace Queries.Persistence.Repositories
         {
             Context.Set<TEntity>().Add(entity);
         }
+
+        // below method can't be made, because AddAsync not available here
+        //public void AddAsync(TEntity entity)
+        //    =>  Context.Set<TEntity>().AddAsync(entity);
 
         public void AddRange(IEnumerable<TEntity> entities)
         {

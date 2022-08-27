@@ -3,13 +3,16 @@ using trackingapi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// configure services using Data dependencies from Infra project
+Infrastructure.Dependencies.ConfigureServices(builder.Configuration, builder.Services);
+
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<IssueDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+//builder.Services.AddDbContext<IssueDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
 
 var app = builder.Build();
 

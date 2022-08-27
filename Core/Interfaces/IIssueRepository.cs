@@ -1,6 +1,8 @@
-﻿namespace Core.Interfaces
+﻿using Core.Entities;
+
+namespace Core.Interfaces
 {
-    public class IIssueRepository
+    public interface IIssueRepository : IRepository<Issue>
     {
     }
 }
