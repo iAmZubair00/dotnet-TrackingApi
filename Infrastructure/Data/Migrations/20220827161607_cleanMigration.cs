@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace trackingapi.Migrations
+namespace Infrastructure.Data.Migrations
 {
-    public partial class smrt : Migration
+    public partial class cleanMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

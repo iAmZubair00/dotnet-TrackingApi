@@ -8,5 +8,6 @@ namespace Core.Interfaces
         //IAuthorRepository Authors { get; }
         IIssueRepository Issues { get; }
         int Complete();
+        Task<int> CompleteAsync();
     }
 }

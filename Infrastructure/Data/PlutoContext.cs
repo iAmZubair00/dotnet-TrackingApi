@@ -7,6 +7,10 @@ namespace Infrastructure.Data
 {
     public class PlutoContext : DbContext
     {
+        public PlutoContext()
+        {
+        }
+
         //public PlutoContext()
         //    : base("name=PlutoContext")
         //{

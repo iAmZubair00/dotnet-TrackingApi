@@ -2,6 +2,7 @@
 using Core.Interfaces;
 //using System.Data.Entity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Linq.Expressions;
 
 namespace Infrastructure.Data.Repositories
@@ -60,9 +61,9 @@ namespace Infrastructure.Data.Repositories
             Context.Set<TEntity>().Add(entity);
         }
 
-        // below method can't be made, because AddAsync not available here
-        //public void AddAsync(TEntity entity)
-        //    =>  Context.Set<TEntity>().AddAsync(entity);
+        //below method can't be made, because AddAsync not available here
+        public ValueTask<EntityEntry<TEntity>> AddAsync(TEntity entity)
+            => Context.Set<TEntity>().AddAsync(entity);
 
         public void AddRange(IEnumerable<TEntity> entities)
         {

@@ -25,7 +25,7 @@ namespace Infrastructure.Data
             return _context.SaveChanges();
         }
 
-        public void CompleteAsync() => _context.SaveChangesAsync();
+        public async Task<int> CompleteAsync() => await _context.SaveChangesAsync();
 
 
         public void Dispose()
